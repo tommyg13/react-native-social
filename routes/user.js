@@ -77,7 +77,10 @@ router.post('/register', (req,res)=>{
 });
 
 router.post("/upload-avatar", checkAuth,upload.single('image'), (req,res)=>{
-    const filePath  = `https://preview.c9users.io/gkazikas/my-social-backend/${req.file.path}`;
+    /**
+     *  TOOOOOOOOOOOOOODO CHANGE FILE PATH
+     */ 
+    const filePath  = `https://raw.githubusercontent.com/tommyg13/react-native-social/master/${req.file.path}`;
     const userEmail = req.userData.email;
     
     User.findOne({email: userEmail}, function (error, user) {
